@@ -12,19 +12,27 @@
 //   )
 // }
 
-// export default App 
+// export default App
 
-
-import React from 'react'
-import Card from './components/Card'
+import React from "react";
+import Card from "./components/Card";
 
 const App = () => {
-  return (
-    <div className='bg-[#111] h-screen w-full p-10'>
-     {/* {Card (5, 10)} */}
-     {Card ("komal")}
-    </div>
-  )
-}
+  const users = ["komal", "Ram", "Sita", "Krish", "Arjun", "Radha"];
 
-export default App
+  return (
+    <div className="bg-[#111] flex gap-2 text-white h-screen w-full p-10">
+      {/* {Card (5, 10)} */}
+      {/* <Card name="komal" age={22}/>  
+     <Card name="Krish" age={25} /> */}
+
+      {/* <Card name="Komal" /> */}
+
+      {users.map((elem) => {
+        return <Card name={elem} />;
+      })}
+    </div>
+  );
+};
+
+export default App;
